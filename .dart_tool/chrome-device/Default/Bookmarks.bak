@@ -1,0 +1,50 @@
+{
+   "checksum": "136f1701735dd99ed969bab6251463ff",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13330541351846186",
+            "date_last_used": "0",
+            "guid": "fd3e5c63-44ff-4d69-8e46-aa1c69083ec7",
+            "id": "6",
+            "name": "Document 6.docx - Microsoft Word Online",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://onedrive.live.com/edit.aspx?action=editnew&resid=AC5B51E9A95FA54!16580&ithint=file%2cdocx&action=editnew&ct=1686067631175&wdNewAndOpenCt=1686067631175&wdPreviousSession=40c15551-6728-4fab-b28d-c349cba1761d&wdOrigin=OFFICECOM-HWA.MAIN.NEW"
+         } ],
+         "date_added": "13339415114557961",
+         "date_last_used": "0",
+         "date_modified": "13330541351846186",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13339415114557964",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13339415114557966",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCEoXX6KKAQAAKg4QABgBIAIoBjAAOABAABIAIAEqGGszcG0wWkRYNGpHekdEL0ROWjkyeWc9PaAGDBKnAQgGEqIBChxxM2t6Sm9VOWlueTZnTkNpekhlMjZZWWtwbG89EiRmZDNlNWM2My00NGZmLTRkNjktOGU0Ni1hYTFjNjkwODNlYzcYACACKAIw492Ok6oxOKfp4IuJMUDi0Y6TqjFKHE02czZad05kTmI3SkhTYWtBai9SUHRvWDZOVT1aHiIcTlhpV1g5S2JVa3NiSWk1TFgzNnEyRzB0SUhNPWXBy6XKEokBCAEShAEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDFjOGFmODQzLTYwODktNTIyOS1iMjI0LTg2NDFmMTQ2ZGVlYhgAIAAoADDr5cWZkS84mrSvg+wvQJq0r4PsL0ocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAAASiQEIAhKEAQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRIkMWNmZGFlM2YtMTIxZi01NzA5LTk3MjYtNDA2OWNkNTUxMGQ4GAAgACgAMOvlxZmRLzi5tK+D7C9AubSvg+wvShxvUFZraHdCUmJWNjVLQ1dSMitJT05IV29PdTg9WgBlAAAAABKJAQgDEoQBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiQzNjZjNjE1Zi0yMDFlLTUxOTAtYTE4ZS05YmM0MmUwYWU3Y2QYACAAKAAw6+XFmZEvOMm0r4PsL0DJtK+D7C9KHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAMAA4AA==",
+   "version": 1
+}
