@@ -5,6 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
+import 'package:flutter/services.dart';
 
 class Counter with ChangeNotifier {
   //Variables
@@ -14,8 +15,9 @@ class Counter with ChangeNotifier {
   dynamic asr;
   dynamic magrib;
   dynamic isha;
+  dynamic _adkardata;
   String userCity = 'Loading...';
-
+  String _nextprayer = "null";
   // Providers
   Position? get userloc => _userLocation;
   dynamic get fajrprayer => fajr;
@@ -23,7 +25,9 @@ class Counter with ChangeNotifier {
   dynamic get asrprayer => asr;
   dynamic get magribprayer => magrib;
   dynamic get ishaprayer => isha;
+  dynamic get adkardata => _adkardata;
   String get userWhereCity => userCity;
+  String get nextprayer => _nextprayer;
 
   void RequestSensors() async {
     final status = await Permission.sensors.request();
@@ -35,6 +39,13 @@ class Counter with ChangeNotifier {
       // Permission is permanently denied, open app settings so the user can enable it
       openAppSettings();
     }
+  }
+
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/athkar.json');
+    final data = await json.decode(response);
+    _adkardata = data;
+    notifyListeners();
   }
 
   String getDate() {
@@ -74,11 +85,68 @@ class Counter with ChangeNotifier {
     if (response.statusCode == 200) {
       // If the server returns a 200 OK response, parse the JSON data
       final jsonData = json.decode(response.body);
-      fajr = convertTo12HourFormat(jsonData["data"]["timings"]["Fajr"]);
-      dohr = convertTo12HourFormat(jsonData["data"]["timings"]["Dhuhr"]);
-      asr = convertTo12HourFormat(jsonData["data"]["timings"]["Asr"]);
-      magrib = convertTo12HourFormat(jsonData["data"]["timings"]["Maghrib"]);
-      isha = convertTo12HourFormat(jsonData["data"]["timings"]["Isha"]);
+      var fajrraw = jsonData["data"]["timings"]["Fajr"].toString();
+      var dohrraw = jsonData["data"]["timings"]["Dhuhr"].toString();
+      var asrraw = jsonData["data"]["timings"]["Asr"].toString();
+      var magribraw = jsonData["data"]["timings"]["Maghrib"].toString();
+      var isharaw = jsonData["data"]["timings"]["Isha"].toString();
+      var time = TimeOfDay.now();
+      double toDouble(TimeOfDay myTime) => myTime.hour + myTime.minute / 60.0;
+      fajr = convertTo12HourFormat(fajrraw);
+      dohr = convertTo12HourFormat(dohrraw);
+      asr = convertTo12HourFormat(asrraw);
+      magrib = convertTo12HourFormat(magribraw);
+      isha = convertTo12HourFormat(isharaw);
+      if (toDouble(time) <
+          toDouble(TimeOfDay(
+              hour: int.parse(fajrraw.substring(0, 2)),
+              minute: int.parse(fajrraw.substring(3, 5))))) {
+        _nextprayer = "Fajr";
+      } else if (toDouble(time) <
+              toDouble(TimeOfDay(
+                  hour: int.parse(dohrraw.substring(0, 2)),
+                  minute: int.parse(dohrraw.substring(3, 5)))) &&
+          toDouble(time) >
+              toDouble(TimeOfDay(
+                  hour: int.parse(fajrraw.substring(0, 2)),
+                  minute: int.parse(fajrraw.substring(3, 5))))) {
+        _nextprayer = "Dohr";
+      } else if (toDouble(time) < toDouble(TimeOfDay(hour: int.parse(asrraw.substring(0, 2)), minute: int.parse(asrraw.substring(3, 5)))) &&
+          toDouble(time) >
+              toDouble(TimeOfDay(
+                  hour: int.parse(dohrraw.substring(0, 2)),
+                  minute: int.parse(dohrraw.substring(3, 5))))) {
+        _nextprayer = "Asr";
+      } else if (toDouble(time) <
+              toDouble(TimeOfDay(
+                  hour: int.parse(magribraw.substring(0, 2)),
+                  minute: int.parse(magribraw.substring(3, 5)))) &&
+          toDouble(time) >
+              toDouble(TimeOfDay(
+                  hour: int.parse(asrraw.substring(0, 2)),
+                  minute: int.parse(asrraw.substring(3, 5))))) {
+        _nextprayer = "Magrib";
+      } else if (toDouble(time) <
+              toDouble(TimeOfDay(
+                  hour: int.parse(isharaw.substring(0, 2)),
+                  minute: int.parse(isharaw.substring(3, 5)))) &&
+          toDouble(time) >
+              toDouble(TimeOfDay(
+                  hour: int.parse(magribraw.substring(0, 2)),
+                  minute: int.parse(magribraw.substring(3, 5))))) {
+        _nextprayer = "Isha";
+      } else if (toDouble(time) >
+          toDouble(
+              TimeOfDay(hour: int.parse(isharaw.substring(0, 2)), minute: int.parse(isharaw.substring(3, 5))))) {
+        _nextprayer = "Fajr";
+      } else {
+        _nextprayer = "null";
+        print(toDouble(time));
+        print(toDouble(TimeOfDay(
+            hour: int.parse(isharaw.substring(0, 2)),
+            minute: int.parse(isharaw.substring(3, 5)))));
+      }
+      print(nextprayer);
       notifyListeners();
     } else {
       // If the server did not return a 200 OK response, throw an exception

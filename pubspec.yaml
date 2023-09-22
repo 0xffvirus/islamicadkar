@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/fonts/
+    - assets/athkar.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -90,8 +91,8 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter-Bold.ttf
-        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/alfont_com_HONORSansArabicUI-DB.ttf
+        - asset: assets/fonts/alfont_com_HONORSansArabicUI-R.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
