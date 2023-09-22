@@ -4,16 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:permission_handler/permission_handler.dart';
-import 'dart:math' as math;
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:provider/provider.dart';
 import 'providers/location.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
-import 'package:sensors_plus/sensors_plus.dart';
-import 'package:flutter_compass/flutter_compass.dart';
-import 'package:vector_math/vector_math.dart' show radians;
-import 'package:flutter_glow/flutter_glow.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -160,12 +155,7 @@ class _PrayersTimeState extends State<PrayersTime> {
   @override
   void initState() {
     super.initState();
-    //requestLocationPermission();
-    // getUserCity().then((city) {
-    //   setState(() {
-    //     userCity = city;
-    //   });
-    // });
+    var time = TimeOfDay.now();
   }
 
   @override
@@ -177,56 +167,188 @@ class _PrayersTimeState extends State<PrayersTime> {
       backgroundColor: Color(0xff121212),
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "${context.watch<Counter>().fajrprayer}",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: "Inter",
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "الفجر",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontFamily: "Inter",
-                                    fontWeight: FontWeight.normal),
-                              ),
-                              Image.asset(
-                                "assets/icons/sunrise.png",
-                                fit: BoxFit.cover,
-                              ),
-                            ],
-                          )
-                        ]),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: Text(
+                      "تواقيت الصلاة",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontFamily: "Inter",
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  height: height * 0.1,
-                  width: width * 0.9,
-                  decoration: BoxDecoration(
-                      color: Color(0xff424242),
-                      borderRadius: BorderRadius.circular(8)),
-                ),
-              )
-            ],
-          ),
+                ],
+              ),
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  PrayerContainer(
+                      context,
+                      height,
+                      width,
+                      context.watch<Counter>().fajrprayer,
+                      "الفجر",
+                      "assets/icons/sunrise.png"),
+                  PrayerContainer(
+                      context,
+                      height,
+                      width,
+                      context.watch<Counter>().dohrprayer,
+                      "الظهر",
+                      "assets/icons/sunrisedohr.png"),
+                  PrayerContainer(
+                      context,
+                      height,
+                      width,
+                      context.watch<Counter>().asrprayer,
+                      "العصر",
+                      "assets/icons/sunriseasr.png"),
+                  PrayerContainer(
+                      context,
+                      height,
+                      width,
+                      context.watch<Counter>().magribprayer,
+                      "المغرب",
+                      "assets/icons/sundownmagrib.png"),
+                  PrayerContainer(
+                      context,
+                      height,
+                      width,
+                      context.watch<Counter>().ishaprayer,
+                      "العشاء",
+                      "assets/icons/sundownisha.png"),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            "اذكار المساء",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: "Inter",
+                                fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/icons/sundownisha.png",
+                          fit: BoxFit.cover,
+                        )
+                      ],
+                    ),
+                    height: height * 0.08,
+                    width: width * 0.41,
+                    decoration: BoxDecoration(
+                        color: Color(0xff424242),
+                        borderRadius: BorderRadius.circular(18)),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            "اذكار الصباح",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: "Inter",
+                                fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/icons/sunrise.png",
+                          fit: BoxFit.cover,
+                        )
+                      ],
+                    ),
+                    height: height * 0.08,
+                    width: width * 0.41,
+                    decoration: BoxDecoration(
+                        color: Color(0xff424242),
+                        borderRadius: BorderRadius.circular(18)),
+                  )
+                ],
+              ),
+            ),
+            Center(
+              child: Text(
+                "المدينة: ${context.watch<Counter>().userCity}",
+                style: TextStyle(
+                    color: Color(0xffa9a9a9),
+                    fontFamily: "Inter",
+                    fontSize: 18),
+              ),
+            )
+          ],
         ),
       )),
+    );
+  }
+
+  Padding PrayerContainer(BuildContext context, double height, double width,
+      var prayerprovider, String prayer, String image) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                "${prayerprovider == null ? "loading" : prayerprovider}",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: "Inter",
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  "$prayer",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontFamily: "Inter",
+                      fontWeight: FontWeight.normal),
+                ),
+                Image.asset(
+                  "$image",
+                  fit: BoxFit.cover,
+                ),
+              ],
+            )
+          ]),
+        ),
+        height: height * 0.08,
+        width: width * 0.9,
+        decoration: BoxDecoration(
+            color: Color(0xff424242), borderRadius: BorderRadius.circular(8)),
+      ),
     );
   }
 }
@@ -249,66 +371,24 @@ class QiblaCompass extends StatefulWidget {
 }
 
 class _QiblaCompassState extends State<QiblaCompass> {
-  double azimuth = 0.0; // Initial Qibla direction in degrees
-
-  double calculateDirection(double latitude, double longitude) {
-    final kaabaLat = radians(21.4224779);
-    final kaabaLng = radians(39.8251832);
-    final userLat = radians(latitude);
-    final userLng = radians(longitude);
-
-    // final userLat = radians(5.4395021);
-    // final userLng = radians(100.4287595);
-
-    final sinDiffLng = math.sin(kaabaLng - userLng);
-    final cosLatEnd = math.cos(kaabaLat);
-    final cosLatStart = math.cos(userLat);
-    final sinLatEnd = math.sin(kaabaLat);
-    final sinLatStart = math.sin(userLat);
-    final cosDiffLng = math.cos(kaabaLng - userLng);
-
-    final angleinRad = math.atan2(
-      sinDiffLng * cosLatEnd,
-      (cosLatStart * sinLatEnd - sinLatStart * cosLatEnd * cosDiffLng),
-    );
-
-    final angleinDeg = (angleinRad * 180 / math.pi + 360) % 360;
-
-    return angleinDeg;
-  }
-
   @override
   void initState() {
     super.initState();
-    gyroscopeEvents.listen((GyroscopeEvent event) {
-      // Use the gyroscope sensor data to calculate the azimuth (rotation angle)
-      double newAzimuth = math.atan2(event.y, event.x) * (180 / math.pi);
-      setState(() {
-        azimuth = newAzimuth;
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    double qiblaDirection = calculateDirection(
-        context.watch<Counter>().userloc!.latitude,
-        context.watch<Counter>().userloc!.longitude);
     return Scaffold(
       backgroundColor: Color(0xff121212),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Transform.rotate(
-              angle: qiblaDirection * (math.pi / 180) * -1,
-              child: Icon(
-                Icons.navigation,
-                size: 100.0,
-                color: Colors.blue,
-              ),
+            child: Text(
+              "under maintain",
+              style: TextStyle(color: Colors.white),
             ),
-          ),
+          )
         ],
       ),
     );
@@ -344,7 +424,10 @@ class _MainScreenState extends State<MainScreen> {
           Scaffold(
             backgroundColor: Color(0xff121212),
             body: Center(
-              child: Text("${context.watch<Counter>().userloc}"),
+              child: Text(
+                "${context.watch<Counter>().userloc}",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           PrayersTime(),
