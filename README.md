@@ -1,4 +1,4 @@
-# Cash Counting 
+# Islamic Adkar 
 Islamic Adkar App | تطبيق اذكار اسلامي
 ## Description
 The app helps you to know at what time prayers will be, it also provided with morning and evening adkars. You can also use "subha" to count your tasbeeh.
