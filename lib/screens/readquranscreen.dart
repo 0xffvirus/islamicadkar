@@ -31,7 +31,7 @@ class _QuranReadingState extends State<QuranReading> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       " ${context.watch<Counter>().qurandata[widget.index]["array"].length} آية",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xff696969),
                         fontSize: 15,
                         fontFamily: "Inter",
@@ -45,7 +45,7 @@ class _QuranReadingState extends State<QuranReading> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                     child: Text(
                       "سورة ${context.watch<Counter>().qurandata[widget.index]["name"]}",
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                           fontFamily: "Inter",
@@ -54,23 +54,19 @@ class _QuranReadingState extends State<QuranReading> {
                   ),
                 ],
               ),
-              SizedBox(
-                child: Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: SelectableText(
-                      "${context.watch<Counter>().qurandata[widget.index]["ar"]}",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        height: 3,
-                        wordSpacing: 5,
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontFamily: "quran",
-                      ),
-                      textDirection: TextDirection.rtl,
-                    ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: SelectableText(
+                  "${context.watch<Counter>().qurandata[widget.index]["ar"]}",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    height: 3,
+                    wordSpacing: 5,
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontFamily: "quran",
                   ),
+                  textDirection: TextDirection.rtl,
                 ),
               )
             ],
