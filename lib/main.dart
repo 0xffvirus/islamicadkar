@@ -7,7 +7,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:provider/provider.dart';
 import 'providers/location.dart';
 import 'screens/PrayerScreen.dart';
-import 'screens/qiblaScreen.dart';
+import 'screens/QuranScreen.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 
 void main() {
@@ -59,6 +59,7 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
     context.read<Counter>().requestlocation();
+    context.read<Counter>().readJsonQuran();
   }
 
   @override
@@ -82,8 +83,8 @@ class _MainScreenState extends State<MainScreen> {
               filledIcon: FluentIcons.building_mosque_16_filled,
               outlinedIcon: FluentIcons.building_mosque_16_regular),
           BarItem(
-              filledIcon: FluentIcons.compass_northwest_16_filled,
-              outlinedIcon: FluentIcons.compass_northwest_16_regular),
+              filledIcon: FluentIcons.book_20_filled,
+              outlinedIcon: FluentIcons.book_20_regular),
         ],
         selectedIndex: selectedIndex,
         onItemSelected: (index) {

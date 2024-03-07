@@ -16,6 +16,7 @@ class Counter with ChangeNotifier {
   dynamic magrib;
   dynamic isha;
   dynamic _adkardata;
+  dynamic _qurandata;
   String userCity = 'Loading...';
   int _countsuhba = 0;
 
@@ -28,6 +29,7 @@ class Counter with ChangeNotifier {
   dynamic get magribprayer => magrib;
   dynamic get ishaprayer => isha;
   dynamic get adkardata => _adkardata;
+  dynamic get qurandata => _qurandata;
   String get userWhereCity => userCity;
   String get nextprayer => _nextprayer;
   int get countsubha => _countsuhba;
@@ -48,6 +50,13 @@ class Counter with ChangeNotifier {
     final String response = await rootBundle.loadString('assets/athkar.json');
     final data = await json.decode(response);
     _adkardata = data;
+    notifyListeners();
+  }
+
+  Future<void> readJsonQuran() async {
+    final String response = await rootBundle.loadString('assets/quran.json');
+    final data = await json.decode(response);
+    _qurandata = data;
     notifyListeners();
   }
 
