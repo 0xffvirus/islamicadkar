@@ -12,108 +12,156 @@ class MainAdkarScreen extends StatefulWidget {
 }
 
 class _MainAdkarScreenState extends State<MainAdkarScreen> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
+
     return Scaffold(
         backgroundColor: Color(0xff121212),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 5),
-                      child: Text(
-                        "اذكار الصباح",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontFamily: "Inter",
-                            fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 5),
+                        child: Text(
+                          "اذكار الصباح",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontFamily: "Inter",
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  context.read<Counter>().readJson();
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MorningScreen()));
-                },
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ",
-                      style: TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                      textDirection: TextDirection.rtl,
-                    ),
+                    ],
                   ),
-                  height: height * 0.2,
-                  width: width * 0.9,
-                  decoration: BoxDecoration(
-                      color: Color(0xff434343),
-                      borderRadius: BorderRadius.circular(12)),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 5),
+                GestureDetector(
+                  onTap: () {
+                    context.read<Counter>().readJson();
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => MorningScreen()));
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "اذكار المساء",
+                        "اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontFamily: "Inter",
-                            fontWeight: FontWeight.bold),
+                          fontFamily: "Inter",
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                        textDirection: TextDirection.rtl,
                       ),
                     ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  context.read<Counter>().readJson();
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AfternoonScreen()));
-                },
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.َ",
-                      style: TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                      textDirection: TextDirection.rtl,
-                    ),
+                    height: height * 0.2,
+                    width: width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xff434343),
+                        borderRadius: BorderRadius.circular(12)),
                   ),
-                  height: height * 0.2,
-                  width: width * 0.9,
-                  decoration: BoxDecoration(
-                      color: Color(0xff434343),
-                      borderRadius: BorderRadius.circular(12)),
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 5),
+                        child: Text(
+                          "اذكار المساء",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontFamily: "Inter",
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    context.read<Counter>().readJson();
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => AfternoonScreen()));
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.َ",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                        textDirection: TextDirection.rtl,
+                      ),
+                    ),
+                    height: height * 0.2,
+                    width: width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xff434343),
+                        borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onLongPress: () {
+                    setState(() {
+                      context.read<Counter>().ResetCount();
+                    });
+                  },
+                  onTap: () {
+                    setState(() {
+                      context.read<Counter>().AddCount();
+                    });
+                  },
+                  child: Container(
+                    child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text(
+                            "${context.watch<Counter>().countsubha}",
+                            style: TextStyle(
+                              fontFamily: "Inter",
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )),
+                    height: height * 0.1,
+                    width: width * 0.9,
+                    decoration: BoxDecoration(
+                        color: Color(0xff434343),
+                        borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    "اضغط للزيادة | ضغطة مطولة لاعادة الضبط",
+                    style: TextStyle(
+                        color: Color(0xffa9a9a9),
+                        fontFamily: "Inter",
+                        fontSize: 18),
+                  ),
+                ),
+              ],
+            ),
           ),
         ));
   }

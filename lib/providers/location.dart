@@ -17,6 +17,8 @@ class Counter with ChangeNotifier {
   dynamic isha;
   dynamic _adkardata;
   String userCity = 'Loading...';
+  int _countsuhba = 0;
+
   String _nextprayer = "null";
   // Providers
   Position? get userloc => _userLocation;
@@ -28,6 +30,7 @@ class Counter with ChangeNotifier {
   dynamic get adkardata => _adkardata;
   String get userWhereCity => userCity;
   String get nextprayer => _nextprayer;
+  int get countsubha => _countsuhba;
 
   void RequestSensors() async {
     final status = await Permission.sensors.request();
@@ -45,6 +48,16 @@ class Counter with ChangeNotifier {
     final String response = await rootBundle.loadString('assets/athkar.json');
     final data = await json.decode(response);
     _adkardata = data;
+    notifyListeners();
+  }
+
+  void AddCount() {
+    _countsuhba++;
+    notifyListeners();
+  }
+
+  void ResetCount() {
+    _countsuhba = 0;
     notifyListeners();
   }
 

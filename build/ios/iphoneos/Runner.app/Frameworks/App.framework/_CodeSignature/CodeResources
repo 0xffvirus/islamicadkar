@@ -10,19 +10,55 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		tKvjqWDuzLBF9fYcLre43RN4yCU=
+		qX4nJx1+CyIufm880+Qa27lYYJs=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		DXKsJHnTxYApkOTXMZ2WzS1wCHw=
+		68F2wrbdqDl0NLvfj89JTCgPfco=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		INk8/XmJxcpVRpwFCuyA57P4fZ8=
+		XwaGW2eP9C8Qwqksld96+JANgZY=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		f8rxcIdXdAE+E41bdirMywuuC1M=
+		zFLcFYJkCU3j+F2+7aiieNDPEZ4=
+		</data>
+		<key>flutter_assets/assets/athkar.json</key>
+		<data>
+		+MlEjIzAAtGMYBd7zgStigV4s4M=
+		</data>
+		<key>flutter_assets/assets/fonts/.DS_Store</key>
+		<data>
+		2g1QfPil6IkT9HG22V6mtwK8Xrg=
+		</data>
+		<key>flutter_assets/assets/fonts/alfont_com_HONORSansArabicUI-DB.ttf</key>
+		<data>
+		wjUTwABlEN++m0TnttMBAcWUyF4=
+		</data>
+		<key>flutter_assets/assets/fonts/alfont_com_HONORSansArabicUI-R.ttf</key>
+		<data>
+		17WWEBhes8HM6a3uxGnNPYITdQc=
+		</data>
+		<key>flutter_assets/assets/icons/sundownisha.png</key>
+		<data>
+		j0B8YVnsgFM58vEq903KvwMkPE8=
+		</data>
+		<key>flutter_assets/assets/icons/sundownmagrib.png</key>
+		<data>
+		EMywF8EV+VbnUcfRJ+scCmfwT1U=
+		</data>
+		<key>flutter_assets/assets/icons/sunrise.png</key>
+		<data>
+		NYv+oIEvzDB/wAxhJZkBINbd+oY=
+		</data>
+		<key>flutter_assets/assets/icons/sunriseasr.png</key>
+		<data>
+		Gwjvn5usnirHiirKBv5nnveov4M=
+		</data>
+		<key>flutter_assets/assets/icons/sunrisedohr.png</key>
+		<data>
+		f+YQNt58kvrZviq4T1GSl/yclZA=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -34,7 +70,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		s/J0YrdOgiCZuWYm10LzQJZazEI=
+		TNKqdUBl+jFExMy9IEEzfmMRn6g=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -42,11 +78,11 @@
 		</data>
 		<key>flutter_assets/packages/fluentui_system_icons/fonts/FluentSystemIcons-Filled.ttf</key>
 		<data>
-		KHf2ZpV1psimLYk64/QUbuNGYVs=
+		BA5e4IN1yjzFZJ0ISa212SNC6zQ=
 		</data>
 		<key>flutter_assets/packages/fluentui_system_icons/fonts/FluentSystemIcons-Regular.ttf</key>
 		<data>
-		8SpwRMT/MGIBvcS/jB9cb4G1MiE=
+		Hj8YdFZlT3b4v8L+GASJkmhaqA8=
 		</data>
 		<key>flutter_assets/packages/flutter_islamic_icons/assets/fonts/IslamicIcons.ttf</key>
 		<data>
@@ -67,28 +103,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KcLsGmIjEJu+OzXFCaEqfxWbaHqG2mxK7rOcAbIYnjo=
+			zeeH/5tAvO7fPEvSqo7Pw+JNKJA38roTozU+I+z3GrU=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sIXTr1SXbe9E4bz3akPX9rmyXII5pad/9XXKtVxLTbM=
+			2EsXUaOTt49iHitTdfEXEXlaczqYGbTckhDiGptVcg0=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tqx86yfMDepIQZIKiQi8VpdHxftQYFGiUNQROtmiJFk=
+			2hCD1TinJsslZ/DUeUZSVK8lFehihdUAtrhRuYi/Bbs=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2Hv3LSQi/bL7B6BHaIKX4jox9x8CdWAZQ5TF6S9HBA0=
+			6axGXIh4H34BbxvqDW1nHuCe7q8+wBPWB0Y1u0Zn19s=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/athkar.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QYUC6Vs6+zZJb8rh0UnJZCXlP2cxT8GWNl7u/x/u5cs=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/fonts/alfont_com_HONORSansArabicUI-DB.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qozV2Cs3ZwLdWiZhwW7NMMgBVxRtHOUm2ZBLwV4+Ems=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/fonts/alfont_com_HONORSansArabicUI-R.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/iFLN/YgFWPqxzE9nNz1594FvsDtRon60Da9V+ieVOo=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/sundownisha.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XP2xTj+2aae/HdnLRLFQ/nG+4WtKyoTzIx3b1gPOSfA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/sundownmagrib.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mFwUcyTYn532EmJuFFpINk/L0Q4OdmsWgYqQnlthVbw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/sunrise.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3QiJfvPGs3Om9OclSg2JO+1FlMpfdQok0TVkFWf9CWQ=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/sunriseasr.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8tcX8dJZpBneSJcFy3D8TPbyNw29/d0j3vgLu1HVn4Q=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/sunrisedohr.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i/dbyZCLO/VC6UPk3bFkl8I1/D6aUMTlWIRDtx47NHk=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -109,7 +201,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YDXB7g9wFkc4m5K3KxvIGx3wZSGRikwWKNU7KoC50hc=
+			O0OF2+jSq8Ok0M2wqRfpj8hMN9fPFvqyEkuHvY9rQJU=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -123,14 +215,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sWW67xp5S1Zewe5SUbJEvr7RZplbP/D3D4dUaQbTdR8=
+			mTzU4PIGj4N73s78SAtxIgU4Z3GE7Lm08Trri9JqM6o=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/fluentui_system_icons/fonts/FluentSystemIcons-Regular.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hvZ/gRMUUl5aM496RTnDu/v28Wmu9Bh4jvO6O5DdltU=
+			UXs7qCDbfAuYow/nZpZ4p6TwAjbeHebiDFRCkj3au5M=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/flutter_islamic_icons/assets/fonts/IslamicIcons.ttf</key>

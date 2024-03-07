@@ -19,11 +19,12 @@ class _QiblaCompassState extends State<QiblaCompass> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text(
-              "under maintainance",
-              style: TextStyle(color: Colors.white),
-            ),
-          )
+              child: Text(
+            "الصفحة تحت التطوير\nبرمجة : بهاء\nTwitter: @0xkfupm",
+            style: TextStyle(
+                color: Color(0xffa9a9a9), fontFamily: "Inter", fontSize: 18),
+            textDirection: TextDirection.rtl,
+          ))
         ],
       ),
     );
