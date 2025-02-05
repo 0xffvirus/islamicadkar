@@ -5,7 +5,8 @@ Continuously alarming for your prayers and duas | نساعدك في تذكيرك
 The main goal of the app is to reminder you about the prayers
 
 ## Screenshot
-<img src="https://i.ibb.co/5KbN84X/1696166396489.jpg" width=600  />
+![image](https://github.com/user-attachments/assets/97872d7b-ceb4-4c51-a79a-bc4cb90aa683)
+
 
 ## Run it locally
 
