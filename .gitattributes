@@ -1,0 +1,12 @@
+# Tell GitHub Linguist to ignore build artifacts
+build/* linguist-vendored
+android/* linguist-vendored
+ios/* linguist-vendored
+macos/* linguist-vendored
+linux/* linguist-vendored
+windows/* linguist-vendored
+web/* linguist-vendored
+.dart_tool/* linguist-vendored
+
+# Explicitly mark Dart files as the main language
+*.dart linguist-language=Dart
